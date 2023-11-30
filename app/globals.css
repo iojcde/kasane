@@ -15,6 +15,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+* {
+  @apply border-gray-4 selection:bg-gray-4/80;
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,4 +28,23 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.font-display {
+  
+  font-variation-settings: 'opsz' 32;
+}
+
+.text-ring{
+  @apply relative;
+
+}
+.text-ring:after{ 
+  content: '';
+  position: absolute; 
+
+  z-index: 0;
+  @apply border-[6px] h-full w-full border-white inset-0 rounded-full; 
 }
