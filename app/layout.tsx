@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "./globals.css"; 
 import { cn } from "@/lib/utils";
 import Nav from "./nav";
+import { Footer } from "./footer";
+import { LenisProvider } from "./lenis";
 
 const inter = localFont({
   src: [
@@ -29,10 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="darfk">
       <body className={cn(inter.className)}>
-        <Nav />
-        {children}
+        <LenisProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
