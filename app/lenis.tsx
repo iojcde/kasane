@@ -10,10 +10,10 @@ import { gsap } from "@/lib/gsap";
 export const LenisProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const locomotiveScroll = new LocomotiveScroll({
-      initCustomTicker: (render) => {
+      initCustomTicker: (render: any) => {
         gsap.ticker.add(render);
       },
-      destroyCustomTicker: (render) => {
+      destroyCustomTicker: (render: any) => {
         gsap.ticker.remove(render);
       },
     });
