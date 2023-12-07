@@ -65,7 +65,7 @@ function Clump({
   useFrame((state) => {
     for (let i = 0; i < 30; i++) {
       // Get current whereabouts of the instanced sphere
-      ref.current.getMatrixAt(i, mat);
+      ref.current?.getMatrixAt(i, mat);
       // Normalize the position and multiply by a negative force.
       // This is enough to drive it towards the center-point.
       api
