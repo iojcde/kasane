@@ -7,7 +7,7 @@ import { gsap } from "@/lib/gsap";
 export const LenisProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
 
-    let locomotiveScroll: import("@iojcde/locomotive-scroll");
+    let locomotiveScroll;
     import("@iojcde/locomotive-scroll").then((locomotiveModule) => {
       locomotiveScroll = new locomotiveModule.default({
         initCustomTicker: (render: any) => {
