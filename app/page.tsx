@@ -26,7 +26,9 @@ export default function Home() {
       <TLDR />
 
       <div className="py-20 container w-full flex flex-wrap gap-8 justify-between">
-        <div className="mt-8">
+        <div className="mt-8" 
+          data-scroll 
+          data-scroll-speed="-0.3">
           <h2 className="text-5xl font-display font-bold">Introduction</h2>
 
           <p className="text-gray-11 mt-4 text-lg max-w-md">
