@@ -24,11 +24,11 @@ export default function Home() {
       </section>
 
       <TLDR />
+    
+
 
       <div className="py-20 container w-full flex flex-wrap gap-8 justify-between">
-        <div className="mt-8" 
-          data-scroll 
-          data-scroll-speed="-0.3">
+        <div className="mt-8">
           <h2 className="text-5xl font-display font-bold">Introduction</h2>
 
           <p className="text-gray-11 mt-4 text-lg max-w-md">
@@ -44,11 +44,11 @@ export default function Home() {
           width={500}
           height={333}
           data-scroll
-          data-scroll-delay="0.5"
+          data-scroll-delay="0.01"
           data-scroll-speed="-0.3"
           src="https://images.unsplash.com/photo-1525286335722-c30c6b5df541?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
-      </div>
+      </div>  
 
       <div className="py-20 container ">
         <h2 className="text-3xl font-display font-bold">Specialties</h2>

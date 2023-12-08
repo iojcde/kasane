@@ -21,7 +21,7 @@ export const LenisProvider = ({ children }: { children: ReactNode }) => {
     });
 
     return () => {
-      locomotiveScroll.destroy();
+      locomotiveScroll?.destroy();
     };
   }, []);
 
