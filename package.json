@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@iojcde/locomotive-scroll": "5.0.0-beta.12",
+    "@iojcde/locomotive-scroll": "5.0.0-beta.13",
     "@radix-ui/colors": "^3.0.0",
     "@react-three/cannon": "6.5.2",
     "@react-three/drei": "9.83.1",
