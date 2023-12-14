@@ -2,40 +2,30 @@ import Image from "next/image";
 
 import Logo from "./components/logo";
 import { TLDR } from "./tldr";
+import { Hero } from "./hero";
+import { Teto } from "./teto";
 
 export default function Home() {
   return (
     <main>
-      <section className="text-3xl h-screen py-48  container">
-        <div className="relative z-0 select-none  pointer-events-none mt-8">
-          <h1 className="text-[5.5rem] leading-[1] text-gray-11 inline-flex items-end gap-4">
-            <Logo className="h-24 text-black" /> studios
-          </h1>
-          <h2>
-            Interdisciplinary design + development
-            {` `}studio.
-          </h2>
-
-          <div className="bg-gray-3  max-w-fit border rounded-full flex gap-3 text-sm items-center px-4 py-1 mt-8 text-gray-11">
-            <div className="dot bg-green-500 w-2 h-2 rounded-full" /> Available
-            for new projects
-          </div>
-        </div>{" "}
-      </section>
-
+      <Hero />
       <TLDR />
-    
-
-
       <div className="py-20 container w-full flex flex-wrap gap-8 justify-between">
         <div className="mt-8">
-          <h2 className="text-5xl font-display font-bold">Introduction</h2>
+          <div className="relative mb-8 border rounded-lg p-6">
+            <Teto />
+            <h3 className="font-semibold text-3xl ">かさね [重ね]</h3>
+            <span className="text-gray-11 inline-block mt-4">Noun</span>
+            <p>
+              1. pile; heap; layers (e.g. of clothing); set (e.g. of boxes);
+              course (e.g. of stones)​
+            </p>
+          </div>
 
-          <p className="text-gray-11 mt-4 text-lg max-w-md">
-            Kasane is a digital design and development studio based in Seoul. We
-            hand-craft digital products that aim to be beautiful, functional,
-            and accessible. We work with clients of all sizes to bring ideas to
-            life through thoughtful, client-focused design and development.
+          <p className="max-w-prose prose">
+            We&apos;re a digital design and development studio based in Seoul.
+            With a focus on UI design and full-stack development, we design and
+            build digital products.
           </p>
         </div>
 
@@ -44,15 +34,14 @@ export default function Home() {
           width={500}
           height={333}
           data-scroll
-          data-scroll-delay="0.01"
-          data-scroll-speed="-0.3"
+          data-scroll-delay="0.1"
+          data-scroll-speed=".2"
           src="https://images.unsplash.com/photo-1525286335722-c30c6b5df541?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
-      </div>  
-
-      <div className="py-20 container ">
+      </div>{" "}
+      <div className="py-20 container h-screen">
         <h2 className="text-3xl font-display font-bold">Specialties</h2>
-        <ul>
+        <ul className="text-5xl space-y-4 mt-8">
           <li>UI design</li>
           <li>Full-stack development</li>
           <li>Branding</li>
