@@ -64,18 +64,14 @@ const Loader = () => {
         scaleX: 1,
         duration: 2,
         ease: "power2.in",
-        onComplete: () => {
-          gsap.to(".loader", {
-            autoAlpha: 0,
-            delay: 0.5,
-            duration: 0.5,
-            ease: "power3.out",
-            onComplete: () => {
-              resolver();
-            },
-          });
-        },
       });
+      await gsap.to(".loader", {
+        autoAlpha: 0,
+        delay: 0.5,
+        duration: 0.5,
+        ease: "power3.out",
+      });
+      resolver();
     });
 
     return () => eases.kill();
