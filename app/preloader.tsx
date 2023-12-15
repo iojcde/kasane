@@ -45,7 +45,7 @@ const Loader = () => {
       if (pageAccessedByReload) {
         await gsap.to(".loader", {
           autoAlpha: 0,
-          delay: 0.7,
+          delay: 0.8,
           duration: 0.5,
           ease: "power3.out",
         });
@@ -65,13 +65,15 @@ const Loader = () => {
         duration: 2,
         ease: "power2.in",
       });
-      await gsap.to(".loader", {
+      gsap.to(".loader", {
         autoAlpha: 0,
         delay: 0.5,
         duration: 0.5,
         ease: "power3.out",
       });
-      resolver();
+      setTimeout(() => {
+        resolver();
+      }, 400);
     });
 
     return () => eases.kill();
@@ -90,10 +92,6 @@ const Loader = () => {
             1. layering; piling up; overlaying; superimposing;
           </p>
         </div>
-      </div>
-      <div className="absolute bottom-16 sm:text-lg left-8 flex gap-2 items-center text-gray-10">
-        {" "}
-        Loading <Loader2 className="animate-spin" size={20} />
       </div>
 
       <div className="progress absolute  inset-x-0 bottom-0 origin-left bg-white h-12 w-screen scale-x-0"></div>

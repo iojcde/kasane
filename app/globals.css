@@ -42,3 +42,17 @@ span[data-scroll] {
   will-change: transform;  
 }
  
+
+@layer components {
+  .scroll-indicator {
+    @apply w-0.5 bg-gray-10 rounded-full h-8 origin-top  ;
+    animation: scroll 3s infinite; 
+    animation-play-state: paused;
+  }
+}
+
+@keyframes scroll {
+  0% {  transform: scaleY(0%) scaleX(0%); }
+  50% { transform: scaleY(100%); }
+  100% {  transform: scaleY(0%) scaleX(0%); }
+}

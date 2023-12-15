@@ -10,6 +10,12 @@ export const Hero = () => {
     const ctx = gsap.context(async () => {
       await promise;
 
+      gsap.to(".hero-bg", {
+        width: "100%",
+        duration: 1,
+        ease: "power2.inOut",
+      });
+
       const split = new SplitText(".split-this", {});
 
       split.lines.forEach((line: HTMLDivElement) => {
@@ -18,16 +24,28 @@ export const Hero = () => {
         line.setAttribute("data-scroll-speed", ".3");
       });
 
-      split.chars.forEach((c) => {
-        if (c.textContent === "＋") {
-          c.classList.add("text-red-500");
-        }
-      });
+      const plus = split.chars.find((c) => c.textContent === "＋"); // fullwidth plus
+      plus.classList.add("text-red-500");
 
       gsap.set(".split-this", { autoAlpha: 1 });
-      gsap.to(".split_line:nth-child(1) > .split_word:nth-child(3)", {
+      gsap.to(plus, {
         rotate: 360,
         delay: 0.65,
+        onComplete: () => {
+          plus.addEventListener("mouseenter", () => {
+            gsap.to(plus, {
+              rotate: "720deg",
+              duration: 0.5,
+            });
+          });
+
+          plus.addEventListener("mouseleave", () => {
+            gsap.to(plus, {
+              rotate: "360deg",
+              duration: 0.5,
+            });
+          });
+        },
       });
       await gsap.from(split.chars, {
         y: 100,
@@ -47,6 +65,38 @@ export const Hero = () => {
           autoAlpha: 1,
         }
       );
+      gsap.to(".scroll-indicator-container", {
+        autoAlpha: 1,
+        delay: 1,
+        onComplete: () => {
+          // animation play state
+          (
+            document.querySelector(".scroll-indicator") as HTMLElement
+          ).style.animationPlayState = "running";
+        },
+      });
+      gsap.from(".scroll-indicator-container", {
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "10% top",
+          onEnter: () =>
+            gsap.to(".scroll-indicator-container", {
+              opacity: 1,
+              duration: 0.5,
+            }),
+          onLeave: () =>
+            gsap.to(".scroll-indicator-container", {
+              opacity: 0,
+              duration: 0.5,
+            }),
+          onEnterBack: () =>
+            gsap.to(".scroll-indicator-container", {
+              opacity: 1,
+              duration: 0.5,
+            }),
+        },
+      });
     });
 
     return () => {
@@ -55,14 +105,15 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="hero relative h-[calc(100vh-24px)] flex flex-col xl:justify-end justify-center   ">
+    <section className="hero relative h-[calc(100vh-24px)]  flex flex-col xl:justify-end justify-center   ">
       <Image
         alt=""
         src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
-        className="object-cover absolute inset-0 w-full h-full -z-10 brightness-105"
-        fill
+        width={4000}
+        height={2667}
+        className="hero-bg object-cover  absolute left-0 inset-y-0 h-full  w-0 -z-10 brightness-105"
       />
-      <div className="relative z-10   pointer-events-none py-20 container">
+      <div className="relative z-10 py-20 container">
         <div className="available invisible">
           <div
             data-scroll
@@ -76,7 +127,12 @@ export const Hero = () => {
         <h1 className="split-this relative z-20 invisible uppercase mt-8 sm:text-8xl text-[2.9rem] leading-[1] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
           Pioneering design ＋ development studio //
         </h1>
-      </div>{" "}
+      </div>
+
+      <div className="invisible scroll-indicator-container absolute bottom-16 flex text-gray-11 items-center right-6 sm:right-8 gap-2">
+        Scroll to explore
+        <div className="scroll-indicator"></div>
+      </div>
     </section>
   );
 };
