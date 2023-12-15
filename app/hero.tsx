@@ -73,7 +73,7 @@ export const Hero = () => {
             for new projects
           </div>
         </div>
-        <h1 className="split-this relative z-20 invisible uppercase mt-8 sm:text-8xl text-4xl leading-[1] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
+        <h1 className="split-this relative z-20 invisible uppercase mt-8 sm:text-8xl text-[2.9rem] leading-[1] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
           Pioneering design ＋ development studio //
         </h1>
       </div>{" "}
