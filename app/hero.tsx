@@ -18,6 +18,12 @@ export const Hero = () => {
         line.setAttribute("data-scroll-speed", ".3");
       });
 
+      split.chars.forEach((c) => {
+        if (c.textContent === "＋") {
+          c.classList.add("text-red-500");
+        }
+      });
+
       gsap.set(".split-this", { autoAlpha: 1 });
       gsap.to(".split_line:nth-child(1) > .split_word:nth-child(3)", {
         rotate: 360,
@@ -29,7 +35,6 @@ export const Hero = () => {
         stagger: 0.02,
       });
 
-      console.log;
       gsap.fromTo(
         ".available",
         {
@@ -50,19 +55,19 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="hero relative h-[calc(100vh-24px)] flex flex-col justify-end   ">
+    <section className="hero relative h-[calc(100vh-24px)] flex flex-col xl:justify-end justify-center   ">
       <Image
         alt=""
         src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
         className="object-cover absolute inset-0 w-full h-full -z-10 brightness-105"
         fill
       />
-      <div className="relative z-10   pointer-events-none py-16 container">
+      <div className="relative z-10   pointer-events-none py-20 container">
         <div className="available invisible">
           <div
             data-scroll
             data-scroll-speed=".4"
-            className="bg-gray-1  max-w-fit shadow rounded-full flex gap-3 text-xs sm:text-sm items-center px-4 py-1 text-gray-11"
+            className="bg-gray-1  max-w-fit border rounded-full flex gap-3 text-xs  items-center px-4 py-1 text-gray-11"
           >
             <div className="dot bg-green-500 w-2 h-2 rounded-full" /> Available
             for new projects

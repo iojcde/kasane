@@ -41,7 +41,4 @@ span[data-scroll] {
   z-index: 1;
   will-change: transform;  
 }
-
-.split_line:nth-child(1) > .split_word:nth-child(3) {
- @apply text-red-500;
-}
+ 

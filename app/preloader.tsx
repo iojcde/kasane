@@ -14,8 +14,6 @@ export const promise = new Promise((resolve) => {
 
 const Loader = () => {
   useEffect(() => {
-    const text = document.querySelector(".loader .name");
-
     const pageAccessedByReload =
       (window.performance.navigation &&
         window.performance.navigation.type === 1) ||
@@ -23,12 +21,31 @@ const Loader = () => {
         .getEntriesByType("navigation")
         .map((nav) => nav.entryType)
         .includes("reload");
+    const text1 = document.querySelector(".kasane-jp");
+    const split1 = new SplitText(text1);
+
+    const text2 = document.querySelector(".kasane-desc");
+    const split2 = new SplitText(text2);
 
     const eases = gsap.context(async () => {
+      gsap.set(text1, { autoAlpha: 1 });
+
+      !pageAccessedByReload && gsap.set(text2, { autoAlpha: 1 });
+
+      gsap.from(split1.chars, {
+        autoAlpha: 0,
+        stagger: 0.01,
+      });
+
+      gsap.from(split2.chars, {
+        autoAlpha: 0,
+        stagger: 0.02,
+      });
+
       if (pageAccessedByReload) {
         await gsap.to(".loader", {
           autoAlpha: 0,
-          delay: 0.5,
+          delay: 0.7,
           duration: 0.5,
           ease: "power3.out",
         });
@@ -36,8 +53,14 @@ const Loader = () => {
         resolver();
         return;
       }
+      gsap.to(".loader .name", {
+        autoAlpha: 1,
+        duration: 1,
+        scale: 1,
+        ease: "power3.out",
+      });
 
-      gsap.to(".loader .progress", {
+      await gsap.to(".loader .progress", {
         scaleX: 1,
         duration: 2,
         ease: "power2.in",
@@ -49,12 +72,6 @@ const Loader = () => {
             ease: "power3.out",
           });
         },
-      });
-      await gsap.to(".loader .name", {
-        autoAlpha: 1,
-        duration: 1,
-        scale: 1,
-        ease: "power3.out",
       });
 
       resolver();
@@ -68,14 +85,16 @@ const Loader = () => {
       className=" bg-black dark loader fixed inset-0 z-[100] flex items-center justify-center"
     >
       <div className="space-y-8 flex flex-col w-[30rem] text-white">
-        <div className="text-gray-12 text-center name origin-center   scale-[0.8]">
-          <h2 className=" text-3xl  sm:text-5xl font-bold">重ね [ka·sa·ne]</h2>
-          <p className="text-gray-11 mt-4">
+        <div className="text-gray-12 text-center name origin-center scale-[0.8]  ">
+          <h2 className="invisible kasane-jp text-xl sm:text-3xl font-display font-semibold">
+            重ね [ka·sa·ne]
+          </h2>
+          <p className="  invisible kasane-desc text-gray-11 mt-4 text-xs sm:text-sm">
             1. layering; piling up; overlaying; superimposing;
           </p>
         </div>
       </div>
-      <div className="absolute bottom-16 text-lg left-8 flex gap-2 items-center text-gray-10">
+      <div className="absolute bottom-16 sm:text-lg left-8 flex gap-2 items-center text-gray-10">
         {" "}
         Loading <Loader2 className="animate-spin" size={20} />
       </div>
