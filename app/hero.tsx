@@ -52,6 +52,7 @@ export const Hero = () => {
   return (
     <section className="hero relative h-[calc(100vh-24px)] flex flex-col justify-end   ">
       <Image
+        alt=""
         src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
         className="object-cover absolute inset-0 w-full h-full -z-10 brightness-105"
         fill
