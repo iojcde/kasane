@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css"; 
+import "./globals.css";
 import { cn } from "@/lib/utils";
 import Nav from "./nav";
 import { Footer } from "./footer";
 import { LenisProvider } from "./lenis";
+import Preloader from "./preloader";
 
 const inter = localFont({
   src: [
@@ -34,8 +35,9 @@ export default function RootLayout({
     <html lang="en" className="darfk">
       <body className={cn(inter.className)}>
         <LenisProvider>
+          <Preloader />
           <Nav />
-          {children}
+          <div className="relative z-10 bg-white">{children}</div>
           <Footer />
         </LenisProvider>
       </body>
