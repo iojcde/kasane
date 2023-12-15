@@ -50,9 +50,9 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="hero relative h-[calc(100vh-32px)] flex flex-col justify-end   ">
+    <section className="hero relative h-[calc(100vh-24px)] flex flex-col justify-end   ">
       <Image
-        src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd"
+        src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
         className="object-cover absolute inset-0 w-full h-full -z-10 brightness-105"
         fill
       />
@@ -61,7 +61,7 @@ export const Hero = () => {
           <div
             data-scroll
             data-scroll-speed=".4"
-            className="bg-gray-3  max-w-fit border rounded-full flex gap-3 text-xs sm:text-sm items-center px-4 py-1 text-gray-11"
+            className="bg-gray-1  max-w-fit shadow rounded-full flex gap-3 text-xs sm:text-sm items-center px-4 py-1 text-gray-11"
           >
             <div className="dot bg-green-500 w-2 h-2 rounded-full" /> Available
             for new projects

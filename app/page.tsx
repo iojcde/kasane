@@ -13,8 +13,10 @@ export default function Home() {
         <div className=" container ">
           <div>
             <h2 className="text-xl font-semibold font-display">WHO WE ARE</h2>
-            <p className=" max-w-lg text-gray-11 mt-4 text-xl">
+            <p className=" max-w-[46ch] text-gray-11 mt-4 text-xl">
               We&apos;re a digital design and development studio based in Seoul.
+            </p>
+            <p className=" max-w-[46ch] text-gray-11 mt-4 text-xl">
               With a focus on UI design and full-stack development, we design
               and build digital products.
             </p>

@@ -40,21 +40,27 @@ const ProjectDetails = () => {
   );
 };
 
-const Project =()=>{
+const Project = () => {
   return (
-    <div>
-      
+    <div 
+    data-scroll
+    data-scroll-speed=".2">
+      <img
+        className="rounded"
+        src="https://io.jcde.xyz/images/screenshot/deverse.png"
+      />
+
     </div>
-  )
-}
+  );
+};
 
 const Works = () => {
   return (
     <div className="container py-20">
       <h2 className="font-display text-xl font-semibold text-center">WORKS↓</h2>
 
-      <div className="mt-8"> 
-        <Project/>
+      <div className="mt-8">
+        <Project />
       </div>
     </div>
   );

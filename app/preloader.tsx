@@ -65,12 +65,12 @@ const Loader = () => {
   return (
     <div
       id="loader"
-      className=" bg-black  loader fixed inset-0 z-[100] flex items-center justify-center"
+      className=" bg-black dark loader fixed inset-0 z-[100] flex items-center justify-center"
     >
       <div className="space-y-8 flex flex-col w-[30rem] text-white">
-        <div className="text-white text-center name origin-center   scale-[0.8]">
-          <h2 className=" text-3xl  sm:text-5xl font-bold">重ね [かさね]</h2>
-          <p className="text-gray-11">
+        <div className="text-gray-12 text-center name origin-center   scale-[0.8]">
+          <h2 className=" text-3xl  sm:text-5xl font-bold">重ね [ka·sa·ne]</h2>
+          <p className="text-gray-11 mt-4">
             1. layering; piling up; overlaying; superimposing;
           </p>
         </div>
