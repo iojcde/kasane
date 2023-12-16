@@ -1,6 +1,8 @@
-const Logo = () => (
+import { cn } from "@/lib/utils";
+
+const LogoInverse = ({ className }: { className?: string }) => (
   <svg
-    className="h-6"
+    className={cn("h-6 inline", className)}
     viewBox="0 0 405 110"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -11,13 +13,13 @@ const Logo = () => (
     />
     <path
       d="M396.173 76.7617L402 67.6526L399.537 64.9181L383.2 45H366.963L388.912 71.3752H392.265L396.173 76.7617ZM382.57 97.4771L397.578 74.6208L388.148 64.3373L366 97.4771H382.57Z"
-      fill="#10BBBB"
+      className="fill-[#10BBBB]  dark:fill-red-500"
     />
     <path
       d="M368.604 20.8281L345.166 107.938H332.617L356.055 20.8281H368.604Z"
-      fill="#10BBBB"
+      className="fill-[#10BBBB]  dark:fill-red-500"
     />
   </svg>
 );
 
-export default Logo;
+export default LogoInverse;

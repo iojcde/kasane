@@ -8,20 +8,20 @@ import { promise } from "./preloader";
 export const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(async () => {
-      await promise;
-
-      gsap.to(".hero-bg", {
-        width: "100%",
-        duration: 1,
-        ease: "power2.inOut",
-      });
-
       const split = new SplitText(".split-this", {});
 
       split.lines.forEach((line: HTMLDivElement) => {
         line.style.overflow = "hidden";
         line.setAttribute("data-scroll", "");
-        line.setAttribute("data-scroll-speed", ".3");
+        line.setAttribute("data-scroll-speed", ".2");
+      });
+
+      await promise;
+
+      await gsap.to(".hero-bg", {
+        height: "100%",
+        duration: 1,
+        ease: "expo.out",
       });
 
       const plus = split.chars.find((c) => c.textContent === "＋"); // fullwidth plus
@@ -68,12 +68,6 @@ export const Hero = () => {
       gsap.to(".scroll-indicator-container", {
         autoAlpha: 1,
         delay: 1,
-        onComplete: () => {
-          // animation play state
-          (
-            document.querySelector(".scroll-indicator") as HTMLElement
-          ).style.animationPlayState = "running";
-        },
       });
       gsap.from(".scroll-indicator-container", {
         scrollTrigger: {
@@ -107,13 +101,15 @@ export const Hero = () => {
   return (
     <section className="hero relative h-[calc(100vh-24px)]  flex flex-col xl:justify-end justify-center   ">
       <Image
+        data-scroll
+        data-scroll-speed="-.2"
         alt=""
         src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
         width={4000}
         height={2667}
-        className="hero-bg object-cover  absolute left-0 inset-y-0 h-full  w-0 -z-10 brightness-105"
+        className="hero-bg object-cover dark:invert select-none  absolute bottom-0 inset-x-0 h-0  w-full -z-10 brightness-105"
       />
-      <div className="relative z-10 py-20 container">
+      <div className="relative z-10 py-4 container">
         <div className="available invisible">
           <div
             data-scroll
@@ -124,14 +120,13 @@ export const Hero = () => {
             for new projects
           </div>
         </div>
-        <h1 className="split-this relative z-20 invisible uppercase mt-8 sm:text-8xl text-[2.9rem] leading-[1] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
+        <h1 className="split-this relative z-20 invisible uppercase mt-8 xl:text-8xl sm:text-7xl text-[2.8rem] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
           Pioneering design ＋ development studio //
         </h1>
       </div>
 
-      <div className="invisible scroll-indicator-container absolute bottom-16 flex text-gray-11 items-center right-6 sm:right-8 gap-2">
-        Scroll to explore
-        <div className="scroll-indicator"></div>
+      <div className="invisible text-gray-11 ml-auto scroll-indicator-container p-6">
+        (SCROLL)
       </div>
     </section>
   );

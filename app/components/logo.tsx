@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 const Logo = ({ className }: { className?: string }) => (
   <svg
-    className={cn("h-6 inline", className)}
+    className={cn("h-6 inline-block", className)}
     viewBox="0 0 405 110"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@ html{
   @apply snap-y snap-mandatory;
 }
 body { 
-    @apply bg-gray-1 text-gray-12 overflow-x-hidden;
+    @apply bg-gray-3 text-gray-12 overflow-x-hidden;
   font-feature-settings: 'liga' 1, 'calt' 1;
 }
 
@@ -46,7 +46,7 @@ span[data-scroll] {
 @layer components {
   .scroll-indicator {
     @apply w-0.5 bg-gray-10 rounded-full h-8 origin-top  ;
-    animation: scroll 3s infinite; 
+    animation: scroll 2s infinite; 
     animation-play-state: paused;
   }
 }

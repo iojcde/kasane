@@ -32,12 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="darfk">
+    <html lang="en" className="dark">
       <body className={cn(inter.className)}>
         <LenisProvider>
           <Preloader />
           <Nav />
-          <div className="relative z-10 bg-white">{children}</div>
+          <div className="relative z-10  ">{children}</div>
           <Footer />
         </LenisProvider>
       </body>

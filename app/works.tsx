@@ -1,3 +1,4 @@
+import Image from "next/image";
 const ProjectDetails = () => {
   return (
     <div className="grid grid-cols-[1.4fr_1fr] gap-12">
@@ -40,27 +41,55 @@ const ProjectDetails = () => {
   );
 };
 
-const Project = () => {
+const Project = ({
+  img,
+  name,
+  desc,
+  type,
+}: {
+  img: string;
+  name: string;
+  desc: string;
+  type: string;
+}) => {
   return (
-    <div 
-    data-scroll
-    data-scroll-speed=".2">
-      <img
-        className="rounded"
-        src="https://io.jcde.xyz/images/screenshot/deverse.png"
+    <div className="relative">
+      <Image
+        alt=""
+        className="rounded-lg"
+        src={img}
+        width={1000}
+        height={500}
       />
 
+      <div className="text-lg mt-4 font-semibold font-display">
+        {name} <span className="text-gray-11 font-normal">- {type}</span>
+      </div>
+      <div className="text-gray-11 mt-1">{desc}</div>
     </div>
   );
 };
 
 const Works = () => {
   return (
-    <div className="container py-20">
-      <h2 className="font-display text-xl font-semibold text-center">WORKS↓</h2>
+    <div className="container py-32">
+      <h2 className="font-display text-3xl font-semibold text-center">
+        RECENT WORKS ↓
+      </h2>
 
-      <div className="mt-8">
-        <Project />
+      <div className="mt-8 grid grid-cols-2 gap-8">
+        <Project
+          name="Devbench"
+          desc="Developer forum"
+          type="Website"
+          img={"/devbench.png"}
+        />{" "}
+        <Project
+          name="Vignette"
+          type="Website"
+          desc="Open source Vtuber software"
+          img={"https://io.jcde.xyz/images/screenshot/vignette.png"}
+        />
       </div>
     </div>
   );
