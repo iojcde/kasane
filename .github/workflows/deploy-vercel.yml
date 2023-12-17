@@ -32,4 +32,4 @@ jobs:
           fi
           npx vercel --confirm --token ${VERCEL_SECRET} $prodRun
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_SECRET }}
+          VERCEL_SECRET: ${{ secrets.VERCEL_SECRET }}
