@@ -16,13 +16,7 @@ export const Hero = () => {
         line.setAttribute("data-scroll-speed", ".2");
       });
 
-      await promise;
-
-      gsap.to(".hero-bg", {
-        height: "100%",
-        duration: 1,
-        ease: "expo.out",
-      });
+      await promise; 
 
       const plus = split.chars.find((c) => c.textContent === "＋"); // fullwidth plus
       plus.classList.add("text-red-500");
@@ -107,7 +101,7 @@ export const Hero = () => {
         src="https://images.unsplash.com/photo-1588345921489-f61ad896c562"
         width={4000}
         height={2667}
-        className="hero-bg object-cover dark:invert select-none  absolute bottom-0 inset-x-0 h-0  w-full -z-10 brightness-105"
+        className="hero-bg object-cover dark:invert select-none  absolute bottom-0 inset-x-0 h-full  w-full -z-10 brightness-105"
       />
       <div className="relative z-10 py-4 container">
         <div className="available invisible">

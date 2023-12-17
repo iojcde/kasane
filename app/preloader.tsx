@@ -30,16 +30,13 @@ const Loader = () => {
         autoAlpha: 0,
         stagger: 0.01,
       });
-      gsap.to(".loader", {
+      await gsap.to(".loader", {
         autoAlpha: 0,
         delay: 0.5,
         duration: 0.5,
         ease: "power3.out",
       });
-
-      setTimeout(() => {
-        resolver();
-      }, 500);
+      resolver();
     });
 
     return () => eases.kill();
