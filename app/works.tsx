@@ -62,8 +62,9 @@ const Project = ({
         height={500}
       />
 
-      <div className="text-lg mt-4 font-semibold font-display">
-        {name} <span className="text-gray-11 font-normal">- {type}</span>
+      <div className="text-2xl mt-4 font-semibold font-display">
+        {name}{" "}
+        <span className="text-gray-11 font-normal text-lg">- {type}</span>
       </div>
       <div className="text-gray-11 mt-1">{desc}</div>
     </div>

@@ -4,6 +4,7 @@ import Logo from "./components/logo";
 import { Hero } from "./hero";
 import { Teto } from "./teto";
 import Works from "./works";
+import Method from "./method";
 
 export default function Home() {
   return (
@@ -47,6 +48,8 @@ export default function Home() {
           <li>Product design</li>
         </ul>
       </div>
+
+    <Method />
     </main>
   );
 }
