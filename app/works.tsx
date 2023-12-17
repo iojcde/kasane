@@ -77,7 +77,7 @@ const Works = () => {
         RECENT WORKS ↓
       </h2>
 
-      <div className="mt-8 grid grid-cols-2 gap-8">
+      <div className="mt-8 grid sm:grid-cols-2 gap-8">
         <Project
           name="Devbench"
           desc="Developer forum"

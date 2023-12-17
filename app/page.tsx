@@ -10,11 +10,13 @@ export default function Home() {
     <main>
       <Hero />
       <div className="py-32 w-full bg-black dark text-white flex flex-wrap gap-8 justify-between">
-        <div className=" container grid  grid-cols-[2.5fr_3fr_0.5fr] justify-between">
-          <h2 className="text-xl font-medium font-display">WHO WE ARE</h2>
+        <div className=" container grid  sm:grid-cols-[2.5fr_3fr_0.5fr] justify-between">
+          <h2 className="text-sm mb-8 sm:text-xl font-medium font-display">
+            WHO WE ARE
+          </h2>
 
           <div>
-            <h3 className="text-4xl leading-snug font-medium font-display">
+            <h3 className="text-3xl sm:text-4xl leading-snug font-medium font-display">
               Blending Creativity with <br />
               Innovative Technology
             </h3>

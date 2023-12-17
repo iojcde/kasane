@@ -18,7 +18,7 @@ export const Hero = () => {
 
       await promise;
 
-      await gsap.to(".hero-bg", {
+      gsap.to(".hero-bg", {
         height: "100%",
         duration: 1,
         ease: "expo.out",
@@ -120,7 +120,7 @@ export const Hero = () => {
             for new projects
           </div>
         </div>
-        <h1 className="split-this relative z-20 invisible uppercase mt-8 xl:text-8xl sm:text-7xl text-[2.8rem] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
+        <h1 className="split-this relative z-20 invisible uppercase mt-8 xl:text-8xl sm:text-7xl text-[2.6rem] text-gray-12 font-display font-semibold items-end gap-2 sm:gap-4">
           Pioneering design ＋ development studio //
         </h1>
       </div>
