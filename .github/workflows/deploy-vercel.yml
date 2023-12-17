@@ -30,6 +30,6 @@ jobs:
           if [[ ${GITHUB_REF} == "refs/heads/master" ]]; then
             prodRun="--prod"
           fi
-          npx vercel --confirm --token ${VERCEL_TOKEN} $prodRun
+          npx vercel --confirm --token ${VERCEL_SECRET} $prodRun
         env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_SECRET }}
