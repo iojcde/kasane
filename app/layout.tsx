@@ -6,6 +6,7 @@ import Nav from "./nav";
 import { Footer } from "./footer";
 import { LenisProvider } from "./lenis";
 import Preloader from "./preloader";
+import "./cursor.css";
 
 const inter = localFont({
   src: [

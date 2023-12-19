@@ -25,6 +25,7 @@
     "gsap": "^3.12.3",
     "leva": "^0.9.35",
     "lucide-react": "^0.295.0",
+    "mouse-follower": "^1.1.2",
     "next": "14.0.4",
     "prop-types": "^15.8.1",
     "react": "^18",

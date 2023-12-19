@@ -22,7 +22,7 @@ export function Sticky({
   start?: number;
   end?: number | string;
   target?: string;
-  snap:
+  snap?:
     | number
     | number[]
     | "labels"

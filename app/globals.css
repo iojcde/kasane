@@ -51,6 +51,7 @@ span[data-scroll] {
   }
 }
 
+ 
 @keyframes scroll {
   0% {  transform: scaleY(0%) scaleX(0%); }
   50% { transform: scaleY(100%); }

@@ -6,7 +6,10 @@ import { useEffect } from "react";
 export const Footer = () => {
   return (
     <>
-      <footer className="h-screen relative z-0 w-full flex flex-col justify-between dark bg-black text-white">
+      <footer
+        data-cursor="-inverse"
+        className="h-screen relative z-0 w-full flex flex-col justify-between dark bg-black text-white"
+      >
         <div className="container font-display flex flex-col mt-12 justify-center h-full items-center">
           <h2 className="text-4xl text-center sm:text-5xl font-medium">
             Have a project in mind?

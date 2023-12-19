@@ -7,12 +7,21 @@ import { SplitText } from "@/lib/splitText.js";
 
 let resolver: (v?: any) => void;
 
+export let cursor: any;
+
+import MouseFollower from "mouse-follower";
+
 export const promise = new Promise((resolve) => {
   resolver = resolve;
 });
 
 const Loader = () => {
   useEffect(() => {
+    MouseFollower.registerGSAP(gsap);
+
+    cursor = new MouseFollower({
+      speed: 0.3,
+    });
     // const pageAccessedByReload =
     //   (window.performance.navigation &&
     //     window.performance.navigation.type === 1) ||

@@ -53,6 +53,9 @@ dependencies:
   lucide-react:
     specifier: ^0.295.0
     version: 0.295.0(react@18.2.0)
+  mouse-follower:
+    specifier: ^1.1.2
+    version: 1.1.2
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -2818,6 +2821,10 @@ packages:
     dependencies:
       for-in: 1.0.2
       is-extendable: 1.0.1
+    dev: false
+
+  /mouse-follower@1.1.2:
+    resolution: {integrity: sha512-Wa/3MKMNWW1qy7XuG34NMRAm504p0PckJU4yTyXCoNYFaaIcZi+bpnTg0L2u8QuGBYgs2ue84wGCPIaQQzRV3Q==}
     dev: false
 
   /ms@2.1.2:
