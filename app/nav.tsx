@@ -3,17 +3,22 @@ import Logo from "./components/logo-inverse";
 
 const Nav = () => {
   return (
-    <div className="container flex items-center text-gray-300 justify-between py-6 mix-blend-difference fixed top-0  inset-x-0 z-50">
+    <div className=" flex items-center text-gray-300 justify-between py-8 px-8 lg:px-12 mix-blend-difference fixed top-0  inset-x-0 z-[251]">
       <Link href="/" className=" align-middle inline-block">
         <Logo />
       </Link>
 
       <div className="flex leading-none gap-8  items-end  h-6">
-        <Link className="align-middle inline-block" href="/about">
-          About
-        </Link>
-        <Link href="/works">Works</Link>
-        <Link href="/contact">Contact</Link>
+        <span className="hidden sm:block">Menu</span>
+        <button
+          id="nav-button"
+          className="group block  outline-none "
+          data-cursor="-menu"
+          data-cursor-stick=""
+        >
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   );

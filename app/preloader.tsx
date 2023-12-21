@@ -10,6 +10,7 @@ let resolver: (v?: any) => void;
 export let cursor: any;
 
 import MouseFollower from "mouse-follower";
+import Magnetic from "@/lib/magnetic";
 
 export const promise = new Promise((resolve) => {
   resolver = resolve;
@@ -22,6 +23,22 @@ const Loader = () => {
     cursor = new MouseFollower({
       speed: 0.3,
     });
+
+    document.addEventListener("mousedown", () => {
+      cursor.addState("-down");
+    });
+
+    document.addEventListener("mouseup", () => {
+      cursor.removeState("-down");
+    });
+
+    new Magnetic(document.querySelector("#nav-button") as HTMLDivElement, {
+      x: 0.08,
+      y: 0.08,
+      s: 0.2,
+      rs: 0.5,
+    });
+
     // const pageAccessedByReload =
     //   (window.performance.navigation &&
     //     window.performance.navigation.type === 1) ||
@@ -39,6 +56,7 @@ const Loader = () => {
         autoAlpha: 0,
         stagger: 0.01,
       });
+
       await gsap.to(".loader", {
         autoAlpha: 0,
         delay: 0.5,
@@ -48,15 +66,19 @@ const Loader = () => {
       resolver();
     });
 
-    return () => eases.kill();
+    return () => {
+      eases.kill();
+      cursor.destroy();
+    };
   }, []);
   return (
     <div
       id="loader"
-      className=" bg-black dark loader fixed inset-0 z-[100] flex items-center justify-center"
+      data-cursor="-inverse"
+      className=" bg-black dark loader fixed inset-0 z-[500] flex items-center justify-center"
     >
       <div className="space-y-8 flex flex-col w-[30rem] text-white">
-        <div className="text-gray-12 text-center name origin-center scale-[0.8]  ">
+        <div className="text-gray-12 text-center name origin-center relative  flex items-center justify-center aspect-square  ">
           <h2 className="invisible kasane-jp text-xl sm:text-3xl font-display font-semibold">
             Kasane Studios
           </h2>

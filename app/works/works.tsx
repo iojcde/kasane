@@ -62,12 +62,14 @@ const Works = () => {
       </div>
       <div className="mt-8 grid sm:grid-cols-2 gap-8">
         <Project
+          slug="devbench"
           name="Devbench"
           desc="Developer forum"
           type="Website"
           img={"/devbench.png"}
         />
         <Project
+          slug="vignette"
           name="Vignette"
           type="Website"
           desc="Open source Vtuber software"

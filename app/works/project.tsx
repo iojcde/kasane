@@ -35,7 +35,7 @@ export const Project = ({
         {name}{" "}
         <span className="text-gray-11 font-normal text-lg">- {type}</span>
       </div>
-      <div className="text-gray-11 mt-1">{desc}</div>
+      <div className="text-gray-10 mt-1">{desc}</div>
     </Link>
   );
 };
